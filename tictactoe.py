@@ -1,6 +1,12 @@
 #!/usr/bin/env python
+#from IPython.display import clear_output
+import os
+
 
 def DisplayBoard(board):
+  #clear_output()
+  os.system('clear')
+  print('check 1')
   print(board[7]+'|'+board[8]+'|'+board[9])
   print("-----")
   print(board[4]+'|'+board[5]+'|'+board[6])
@@ -70,6 +76,7 @@ def TicTacToe():
   in a 3 by 3 grid.  The first player to get three of their markers (an X or an O) in a row wins the game.
   In the event that every square is taken without any wins, the game is a tie.
   """
+  os.system('clear')
   playerTurn = 0
   players = PlayerAssignment()
   board = ['-',' ',' ',' ',' ',' ',' ',' ',' ',' ']
@@ -91,11 +98,3 @@ def TicTacToe():
       break
 
 TicTacToe()
-
-
-
-
-
-
-
-
