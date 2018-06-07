@@ -26,7 +26,8 @@ def PlayerAssignment():
 
 def PlayerMove(board,player):
   """
-  
+  Function that purely gets the input from the player, checks it is a viable input and then returns the location
+  the input can be between 
   """
   count = 0
   while count < 5:
@@ -39,7 +40,6 @@ def PlayerMove(board,player):
     else:
       print('That is not an appropriate move.')
     count += 1
-  print('5 unsuccessful attempst have been made to make a move, you are probably just screwing around right now...')
   return 0
 
 def CheckWin(board):
@@ -83,7 +83,12 @@ def TicTacToe():
   winFlag = 0
   DisplayBoard(board)
   while winFlag == 0:
-    board[PlayerMove(board, players[playerTurn])] = players[playerTurn]
+    moveRet = PlayerMove(board, players[playerTurn])
+    if moveRet:
+      board[moveRet] = players[playerTurn]
+    else:
+      input('5 unsuccessful attempts have been made to make a move, you are probably just screwing around right now...')
+      break
     DisplayBoard(board)
     winFlag = CheckWin(board)
     if not winFlag == 0:
